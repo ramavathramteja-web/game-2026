@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>THE MISSING SUN — UI Prototype</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+
+  <section class="screen" id="screen-title" data-screen="title">
+    <div class="title-void"></div>
+    <div class="title-glow"></div>
+    <div class="title-inner">
+      <div class="title-clock">9:14:00</div>
+      <h1 class="title-name"><span>THE</span><span>MISSING</span><span>SUN</span></h1>
+      <div class="title-rule"></div>
+      <p class="title-sub">Every clock in the world stopped at 9:14 a.m.<br>Detective Ray has been assigned to find out who turned off the Sun.</p>
+      <button class="btn-primary" id="btn-start">BEGIN INVESTIGATION</button>
+      <div class="title-hint">WASD move &nbsp;·&nbsp; F torch &nbsp;·&nbsp; TAB notebook &nbsp;·&nbsp; hold the beam on a mark</div>
+    </div>
+    <div class="title-foot">
+      <span>UI PROTOTYPE · GODOT 4.7 TARGET · 13:00 RUN TIME</span>
+      <button class="link-btn" id="btn-gallery-title">UI GALLERY</button>
+    </div>
+  </section>
+
+  <section class="screen" id="screen-stage" data-screen="stage">
+
+    <div class="stage" id="stage">
+      <div class="room">
+        <div class="room-wall"></div>
+        <div class="room-floor"></div>
+        <div class="room-door" id="room-door"><div class="room-door-glow"></div></div>
+        <div class="prop-lamp" id="prop-lamp"><div class="prop-lamp-bulb"></div><div class="prop-lamp-base"></div></div>
+        <div class="prop-bank" id="prop-bank">
+          <div class="switch" data-switch="A"><span>A</span></div>
+          <div class="switch" data-switch="B"><span>B</span></div>
+          <div class="switch" data-switch="C"><span>C</span></div>
+          <div class="switch" data-switch="D"><span>D</span></div>
+        </div>
+        <div class="prop-mirror" id="prop-mirror"></div>
+        <div class="mark" id="mark-wall" data-mark="wall">
+          <div class="mark-ring"></div><div class="mark-dot"></div>
+          <div class="sunwriting" id="sw-wall">9:14</div>
+        </div>
+      </div>
+
+      <div class="beam-moonlight"></div>
+      <div class="beam-torch" id="beam-torch"></div>
+      <div class="beam-bloom" id="beam-bloom"></div>
+
+      <div class="reticle" id="reticle">
+        <svg viewBox="0 0 64 64" class="ret-svg">
+          <circle class="ret-track" cx="32" cy="32" r="26"/>
+          <circle class="ret-fill" id="ret-fill" cx="32" cy="32" r="26"/>
+        </svg>
+        <div class="ret-dot"></div>
+        <div class="ret-tier" id="ret-tier">T2</div>
+      </div>
+    </div>
+
+    <div class="hud">
+      <div class="hud-clock" id="hud-clock">9:14:00</div>
+      <div class="hud-torch" id="hud-torch" data-on="true">
+        <span class="dot"></span><span class="lbl">TORCH</span>
+      </div>
+      <div class="hud-watch" id="hud-watch">9:27<span>:41</span></div>
+    </div>
+
+    <div class="objective" id="objective"><b>BEAT 1</b><span id="objective-text">Throw switches A and B</span></div>
+
+    <div class="placard" id="placard">
+      <div class="placard-head" id="placard-head">MODULE 1: LIGHT IS EVIDENCE</div>
+      <div class="placard-body" id="placard-body"></div>
+    </div>
+
+    <div class="prompt" id="prompt"><kbd>E</kbd><span id="prompt-text">Examine</span></div>
+
+    <div class="subtitle" id="subtitle">
+      <div class="sub-name" id="sub-name"></div>
+      <div class="sub-text" id="sub-text"></div>
+    </div>
+
+    <div class="thought" id="thought"></div>
+
+    <div class="toasts" id="toasts"></div>
+    <div class="prompt-keys"><kbd>TAB</kbd> notebook &nbsp; <kbd>G</kbd> gallery</div>
+  </section>
+
+  <section class="screen overlay" id="screen-notebook" data-screen="notebook">
+    <div class="nb">
+      <header class="nb-head">
+        <div class="nb-title">DETECTIVE RAY — CASE 0001</div>
+        <div class="nb-tabs">
+          <button class="nb-tab is-on" data-tab="clues">CLUES <em id="nb-count-clues">0</em></button>
+          <button class="nb-tab" data-tab="people">PEOPLE <em id="nb-count-people">0</em></button>
+          <button class="nb-tab" data-tab="know">WHAT I KNOW</button>
+          <button class="nb-tab" data-tab="connect">CONNECT</button>
+        </div>
+        <button class="nb-close" id="nb-close">CLOSE</button>
+      </header>
+
+      <div class="nb-body">
+        <div class="nb-pane is-on" data-pane="clues">
+          <div class="nb-cols">
+            <div class="nb-list" id="nb-clues"></div>
+            <aside class="nb-detail" id="nb-detail">
+              <div class="nb-detail-empty">Select a clue</div>
+            </aside>
+          </div>
+        </div>
+
+        <div class="nb-pane" data-pane="people">
+          <div class="nb-people" id="nb-people"></div>
+        </div>
+
+        <div class="nb-pane" data-pane="know">
+          <div class="nb-know" id="nb-know">
+            <div class="know-empty">Ray hasn't written anything down yet.</div>
+          </div>
+        </div>
+
+        <div class="nb-pane" data-pane="connect">
+          <div class="conn">
+            <p class="conn-lede">Drag every entry onto the Sun Control switch. Ray will tell you what he thinks it means.</p>
+            <div class="conn-chips" id="conn-chips"></div>
+            <div class="conn-target" id="conn-target">
+              <div class="conn-target-ring"></div>
+              <div class="conn-target-lbl">SUN CONTROL<br>SWITCH</div>
+              <div class="conn-dropped" id="conn-dropped"></div>
+              <div class="conn-count" id="conn-count">0 / 3</div>
+            </div>
+            <div class="conn-reason" id="conn-reason"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen overlay" id="screen-tape" data-screen="tape">
+    <div class="tape">
+      <div class="tape-edge"></div>
+      <div class="tape-meta">ACCESS LOG · SUN CONTROL FLOOR · ENTRY 914</div>
+      <div class="tape-body handwriting" id="tape-body"></div>
+      <div class="tape-edge"></div>
+      <button class="btn-ghost" id="tape-close">FOLD IT AWAY</button>
+    </div>
+  </section>
+
+  <section class="screen" id="screen-end" data-screen="end">
+    <div class="end-void"></div>
+    <div class="end-inner">
+      <div class="end-card">
+        <div class="end-card-head">LOG ENTRY 914</div>
+        <div class="end-card-line" id="end-lines"></div>
+        <div class="end-card-black"></div>
+      </div>
+      <div class="end-time">9:13:41</div>
+    </div>
+    <button class="link-btn end-again" id="btn-again">RUN IT AGAIN</button>
+  </section>
+
+  <section class="screen overlay" id="screen-gallery" data-screen="gallery">
+    <div class="gal">
+      <header class="gal-head">
+        <h2>UI GALLERY</h2>
+        <p>Every screen and state in one place, for review without a 13-minute playthrough.</p>
+        <button class="nb-close" id="gal-close">CLOSE</button>
+      </header>
+      <div class="gal-body" id="gal-body"></div>
+    </div>
+  </section>
+
+</div>
+
+<script src="content.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <rect width="128" height="128" fill="#04050a"/>
+  <circle cx="64" cy="64" r="30" fill="none" stroke="#ffb968" stroke-width="3" opacity="0.85"/>
+  <circle cx="64" cy="64" r="6" fill="#d9f2a8"/>
+  <text x="64" y="118" font-family="monospace" font-size="13" fill="#4d576b" text-anchor="middle">9:14:00</text>
+</svg>

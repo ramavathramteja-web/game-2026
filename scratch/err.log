@@ -1,0 +1,43 @@
+WARNING: Screen-space reflections (SSR) are only available when using the Forward+ renderer.
+   at: environment_set_ssr (servers/rendering/storage/environment_storage.cpp:653)
+   GDScript backtrace (most recent call first):
+       [0] apply (res://src/core/Atmosphere.gd:31)
+       [1] _build_env (res://src/levels/L2_SuspectStreet.gd:47)
+       [2] _ready (res://src/levels/L2_SuspectStreet.gd:21)
+       [3] _ready (res://src/tests/SuspectTest.gd:11)
+ERROR: Convex decomposing failed. Make sure the font doesn't contain self-intersecting lines, as these are not supported in TextMesh.
+   at: _generate_glyph_mesh_data (scene/resources/3d/primitive_meshes.cpp:3191)
+   GDScript backtrace (most recent call first):
+       [0] label (res://src/core/Sign.gd:26)
+       [1] _sign_prop (res://src/levels/L2_SuspectStreet.gd:367)
+       [2] _actors (res://src/levels/L2_SuspectStreet.gd:213)
+       [3] _ready (res://src/levels/L2_SuspectStreet.gd:24)
+       [4] _ready (res://src/tests/SuspectTest.gd:11)
+ERROR: Triangulation failed. Make sure the font doesn't contain self-intersecting lines, as these are not supported in TextMesh.
+   at: _generate_glyph_mesh_data (scene/resources/3d/primitive_meshes.cpp:3196)
+   GDScript backtrace (most recent call first):
+       [0] label (res://src/core/Sign.gd:26)
+       [1] _sign_prop (res://src/levels/L2_SuspectStreet.gd:367)
+       [2] _actors (res://src/levels/L2_SuspectStreet.gd:213)
+       [3] _ready (res://src/levels/L2_SuspectStreet.gd:24)
+       [4] _ready (res://src/tests/SuspectTest.gd:11)
+ERROR: Convex decomposing failed. Make sure the font doesn't contain self-intersecting lines, as these are not supported in TextMesh.
+   at: _generate_glyph_mesh_data (scene/resources/3d/primitive_meshes.cpp:3191)
+   GDScript backtrace (most recent call first):
+       [0] label (res://src/core/Sign.gd:26)
+       [1] _sign_prop (res://src/levels/L2_SuspectStreet.gd:367)
+       [2] _actors (res://src/levels/L2_SuspectStreet.gd:213)
+       [3] _ready (res://src/levels/L2_SuspectStreet.gd:24)
+       [4] _ready (res://src/tests/SuspectTest.gd:11)
+ERROR: Triangulation failed. Make sure the font doesn't contain self-intersecting lines, as these are not supported in TextMesh.
+   at: _generate_glyph_mesh_data (scene/resources/3d/primitive_meshes.cpp:3196)
+   GDScript backtrace (most recent call first):
+       [0] label (res://src/core/Sign.gd:26)
+       [1] _sign_prop (res://src/levels/L2_SuspectStreet.gd:367)
+       [2] _actors (res://src/levels/L2_SuspectStreet.gd:213)
+       [3] _ready (res://src/levels/L2_SuspectStreet.gd:24)
+       [4] _ready (res://src/tests/SuspectTest.gd:11)
+WARNING: 7 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 2 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

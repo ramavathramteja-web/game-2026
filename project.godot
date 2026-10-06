@@ -1,0 +1,44 @@
+config_version=5
+
+[application]
+
+config/name="The Missing Sun"
+config/description="First-person comedy mystery. The Sun is gone. Every clock stopped at 9:14. You did it."
+run/main_scene="res://src/levels/Title.tscn"
+config/features=PackedStringArray("4.7", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+Game="*res://src/autoload/Game.gd"
+Engrave="*res://src/ui/Engrave.gd"
+Snd="*res://src/autoload/Snd.gd"
+DevShot="*res://src/autoload/DevShot.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[gui]
+
+theme/custom_font="res://assets/Outfit.tres"
+theme/default_font_antialiasing=1
+theme/default_font_hinting=1
+
+[rendering]
+
+anti_aliasing/quality/msaa_3d=2
+anti_aliasing/quality/screen_space_aa=1
+anti_aliasing/quality/use_debanding=true
+lights_and_shadows/directional_shadow/soft_shadow_filter_quality=3
+lights_and_shadows/positional_shadow/atlas_size=8192
+lights_and_shadows/positional_shadow/atlas_16_bits=true
+lights_and_shadows/positional_shadow/soft_shadow_filter_quality=3
+environment/defaults/default_clear_color=Color(0.016, 0.02, 0.035, 1)
+
+[physics]
+
+3d/default_gravity=0.0

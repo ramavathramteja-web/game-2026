@@ -1,0 +1,21 @@
+# Godot
+.godot/
+.import/
+export.cfg
+export_presets.cfg
+
+# Build output
+build/
+bin/
+*.exe
+*.pck
+*.zip
+
+# Dev capture output (regenerated with --shot=N; see src/autoload/DevShot.gd)
+shots/
+
+# OS cruft
+Thumbs.db
+.DS_Store
+desktop.ini
+*.tmp

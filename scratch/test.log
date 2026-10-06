@@ -1,0 +1,21 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS  player present
+PASS  four suspects placed
+PASS  Moon has three states
+PASS  Sir has two states
+PASS  Clouds has one state
+PASS  Moon's first state grants nothing
+PASS  Moon grants S-01 (shadows east)
+PASS  Moon's third state is gated on S-03
+PASS  Wick withholds D-02 without S-03
+PASS  Sir grants S-03 (surge photo)
+PASS  Sir grants S-04 (old slice)
+PASS  Wick grants D-02 once S-03 is held
+PASS  Moon unlocks her third state once S-03 is held
+PASS  Moon runs out of states
+PASS  Clouds has nothing more
+PASS  S-01 + S-04 unlock the villain lair
+PASS  gate_open true after questioning
+---
+SUSPECTS: ALL PASS
